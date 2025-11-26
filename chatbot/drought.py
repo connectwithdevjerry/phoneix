@@ -1,13 +1,5 @@
 import ee
-
-def ensure_gee_initialized():
-    print("drought page, 1")
-    try:
-        ee.Initialize()
-    except Exception as e:
-        # return
-        # raise RuntimeError(f"GEE failed: {e}\nRun: earthengine authenticate") from e
-        pass
+from .gee_engine import ensure_gee_initialized
 
 ensure_gee_initialized()
 

@@ -22,7 +22,8 @@ async def initialize_telegram_bot(app_instance):
     """Initializes the Telegram bot application only once."""
     if not getattr(app_instance, '_is_initialized', False):
         print("Starting Telegram Application initialization...")
-        await app_instance.initialize(project=PROJECT_ID, service_account=SERVICE_ACCOUNT, key_file=KEY_FILE)
+        await app_instance.initialize()
+        # await app_instance.initialize(project=PROJECT_ID, service_account=SERVICE_ACCOUNT, key_file=KEY_FILE)
         app_instance._is_initialized = True
         print("Telegram Application initialized successfully.")
 

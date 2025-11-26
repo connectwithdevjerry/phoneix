@@ -1,4 +1,7 @@
 # chatbot/gee_engine.py
+import base64
+import json
+import os
 import ee
 from ee import EEException
 from django.conf import settings
@@ -11,13 +14,22 @@ vhi_2015 = None
 lst_class = None
 
 def ensure_gee_initialized():
-    print("gee_engine page, 1")
-    try:
-        ee.Initialize()
-    except Exception as e:
-        # return
-        # raise RuntimeError(f"GEE failed: {e}\nRun: earthengine authenticate") from e
-        pass
+    if ee.data._initialized:
+        return
+    
+    service_account = os.getenv("GEE_SERVICE_ACCOUNT")
+    key_b64 = os.getenv("GEE_PRIVATE_KEY_B64")
+
+    # Convert base64 → dict
+    key_data = json.loads(base64.b64decode(key_b64))
+
+    # Credential for service account
+    credentials = ee.ServiceAccountCredentials(
+        email=service_account,
+        key_data=key_data
+    )
+    ee.Initialize(credentials)
+
 
 ensure_gee_initialized()
 # ===============================

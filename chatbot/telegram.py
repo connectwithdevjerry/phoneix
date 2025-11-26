@@ -15,7 +15,6 @@ BOT_TOKEN ="8496710291:AAH76wzl7zPh0p23QS4Ya8NDVhxYYpTuT6o"
 # Create the Application object
 application = Application.builder().token(BOT_TOKEN).build()
 
-print("telegram page, 1")
 
 # Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -180,7 +179,6 @@ async def handle_location(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True)
     )
 
-print("telegram page, 2")
 application.add_handler(CommandHandler("start", start))
 application.add_handler(CommandHandler("recommendation", recommendation))
 # application.add_handler(CommandHandler("mrecommendation", mrecommendation))
