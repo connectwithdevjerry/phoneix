@@ -1,1 +1,1 @@
-web: daphne phoneix.landalert.asgi:application --bind 0.0.0.0 --port $PORT
+web: daphne landalert.asgi:application --bind 0.0.0.0 --port $PORT
