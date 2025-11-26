@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ee-street-guide",
+  "private_key_id": "0337eaa48f628113ef0bea7e4b08e0eb77868a49",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCX52p01wa9YaTf\n2Uvc9BQg6KrujPs/Marp6DiBVAk+d5h+NCSEMoNw3aB+8xe07KNWA2zQvjfLay46\nDVvQ3Grh2Deg6A/PDLc8Q4MYLrt49BxkTSNS6rAVB46Wwv2exBJHcp404hDSfOSe\nHO7nRCfLXY2V+XfjrSGRz2cW1Kl6HsMmXRwnDUCGDJoL4g2Tvk5/S78xWZmZRcfY\nrceiEMK3jqwrFQNaQ9BO9LpFvyw/45bSRSv82kVhvY67dqIEn9PV6UKzYOA3qF7+\nLXWJP/J1ZLO1OhbZUKdASVIw5ydjFx8d8XzVh9S9JPscOBTOSxk6YrBITKgvxhKj\n8z/83Mr5AgMBAAECggEAApJjihwMNuofjhOs1g5C21DHzhdQd1WFBjCik5v44Rgf\nb+mRlwm6PHpgHy4d9WKj8aRICXENsEcTBrQXB8j85/B5dqMJ23tPYeORurfV1Y/V\nKDnpx8ZbRKvhVTpIFtH32Oz+8o3DnlCzgogiX64sJKRjmImwpt1ASiqdB/UB8+Q+\nmPRfLb8wBWq6R3zrhER4v9XI9KmmPQ6u3+E40gddEV/on4CP45bsKqj1tdELaW0E\n9lRP3pFNBF7nNQ3qNqVNxmj3PwK8u9jYsBYVRyKShzu/11QGbO9BnUflaUPe4OM3\nVoeiDIy8g1MtIdni31F5r99Wa0SYQiiC9u8IcBwcYQKBgQDGZ0jIFBexXPLzDLS7\nnu4r+dNa88kMJJkQLy1b1t1zAPZEbx9/V91nqUbNO+mjBJra/psAuWYsd6mCdUpw\nzPXVDjBb01k974p5Kwea9oR8JC4xIxb68ObhY5ZbA/QvQTE8PO7fyOeOzlL4gGmk\nXPhCEhVDqJgI8KKBeANeFLTvsQKBgQDEAG/pYOBZKvcnPrtr8hXnWTjqaiVPoi65\nG9uCGKP5qJDA7U8d4cwJzakShhzaFeeR4/GlPpuMtszzJ6uoz6UhR95bfSbvkl64\no5OrCJYgDfjBuyO5MH1ViF6YFTdh21Cs7jTLpoaIom2yUAzL86gDKdW67ZHHFUdC\n7sJTgI1pyQKBgQCl2ndkEi/QK5RIi0mWQgB1sIz3Ti21we5WMinnyREr7xTvFjmt\nWUUTP9WZAUmI5fORuB7ZFyMLbyi7jtMgwqWKaicQy/ehJ9qI+eiMqSENKa2Xk+7E\n7ZcDuR1ajk6VJhlDcuh5GFhB78Y6SBaHuNQrXzR5b7lQV+Bw/GNMRWEPsQKBgFWN\nU0vs60BAjszkhu5hJspqmXtIhayyv+4wiKnKk5hfyX9MliIW8va8fDYHsARJV2DI\nvCtCnqbXC7J++GCg8hUKx7XrdNlRbGLvk38uKkknkBMP2lH1Jl/1PETpzdi64AX7\nm7PgpgxxyavxYQSNACMRWadUFzNsyEQg71V/YTpxAoGAETuTIQ6vcAb+u4BNOu7/\nLxMn3fKRR5piIANdkjTA/hJPTO7oTiLSpRMKQnPYY6m7WQTw7AiUMomPexiB6T9i\nJxMQPSxQRFl1evsCQ68GqfSBCVn6WSHyGND61wJ7r2pgGPJ0nNt6ddgt9h2jWzUi\ndyiB7Ja/8l3kaX50Fun4Wcg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "phoenix@ee-street-guide.iam.gserviceaccount.com",
+  "client_id": "104802183403056411291",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/phoenix%40ee-street-guide.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
