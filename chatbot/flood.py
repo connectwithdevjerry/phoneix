@@ -4,6 +4,7 @@ def ensure_gee_initialized():
     print("flood page, 1")
     try:
         ee.Initialize()
+        print("flood page, 2")
     except Exception as e:
         # return
         # raise RuntimeError(f"GEE failed: {e}\nRun: earthengine authenticate") from e
@@ -12,9 +13,10 @@ def ensure_gee_initialized():
 ensure_gee_initialized()
 
 # Study area, Nigeria as a country
+print("flood page, 3")
 countries = ee.FeatureCollection("USDOS/LSIB_SIMPLE/2017")
 nigeria = countries.filter(ee.Filter.eq('country_na', 'Nigeria'))
-
+print("flood page, 4")
 # ==========================================
 # 2. DEM (SRTM 30m)
 # ==========================================
@@ -221,6 +223,7 @@ def floodAnalysis(lat, lon):
     if lat is None or lon is None:
         return
 
+    print("flood page, 5")
     point = ee.Geometry.Point([lon, lat])
 
     try:
@@ -255,6 +258,8 @@ def floodAnalysis(lat, lon):
         # Print Output
         label = class_names.get(int(class_val), "Unknown") if class_val is not None else "No Data"
 
+        print("flood page, 6")
+
         return {
             "latitude": f"{lat:.4f}",
             "longitude": f"{lon:.4f}",
@@ -263,5 +268,6 @@ def floodAnalysis(lat, lon):
         }
 
     except Exception as e:
+        print("flood page, 7")
         # print(f"Error: {e}")
         pass
