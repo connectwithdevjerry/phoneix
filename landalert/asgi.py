@@ -14,13 +14,15 @@ from chatbot.telegram import application as app # Corrected import path
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'landalert.settings')
 SERVICE_ACCOUNT = "phoenix@ee-street-guide.iam.gserviceaccount.com"
+KEY_FILE = "ee.json"
+PROJECT_ID = "ee-street-guide"
 
 # --- Initialization Function ---
 async def initialize_telegram_bot(app_instance):
     """Initializes the Telegram bot application only once."""
     if not getattr(app_instance, '_is_initialized', False):
         print("Starting Telegram Application initialization...")
-        await app_instance.initialize(service_account=SERVICE_ACCOUNT, key_file="ee.json")
+        await app_instance.initialize(project=PROJECT_ID, service_account=SERVICE_ACCOUNT, key_file=KEY_FILE)
         app_instance._is_initialized = True
         print("Telegram Application initialized successfully.")
 

@@ -1,7 +1,5 @@
 import os
-
 from .aisetup import generate_smart_recommendation
-
 from .flood import floodAnalysis
 from .drought import droughtAnalysis
 from telegram import Update
