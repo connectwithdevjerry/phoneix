@@ -1,8 +1,8 @@
 import ee
 
 def ensure_gee_initialized():
+    print("drought page, 1")
     try:
-        ee.Authenticate(auth_mode='web')
         ee.Initialize()
     except Exception as e:
         # return

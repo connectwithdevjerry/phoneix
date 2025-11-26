@@ -1,6 +1,7 @@
 import ee
 
 def ensure_gee_initialized():
+    print("flood page, 1")
     try:
         ee.Initialize()
     except Exception as e:

@@ -11,8 +11,8 @@ vhi_2015 = None
 lst_class = None
 
 def ensure_gee_initialized():
+    print("gee_engine page, 1")
     try:
-        ee.Authenticate(auth_mode='web')
         ee.Initialize()
     except Exception as e:
         # return
