@@ -2,7 +2,6 @@ import ee
 
 def ensure_gee_initialized():
     try:
-        ee.Authenticate(auth_mode='web')
         ee.Initialize()
     except Exception as e:
         # return

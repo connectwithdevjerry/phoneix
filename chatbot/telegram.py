@@ -179,9 +179,10 @@ async def handle_location(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True)
     )
 
-# Register handlers
-application.add_handler(CommandHandler("start", start))
-application.add_handler(CommandHandler("recommendation", recommendation))
-# application.add_handler(CommandHandler("mrecommendation", mrecommendation))
-application.add_handler(MessageHandler(filters.LOCATION, handle_location))
-application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, aiRecommendation))
+if application._is_initialized:
+    # Register handlers
+    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("recommendation", recommendation))
+    # application.add_handler(CommandHandler("mrecommendation", mrecommendation))
+    application.add_handler(MessageHandler(filters.LOCATION, handle_location))
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, aiRecommendation))
