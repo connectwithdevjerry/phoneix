@@ -101,23 +101,9 @@ class WhatsAppWebhook(View):
             return JsonResponse({"error": str(e)}, status=400)
         
 
-# Create bot + application once
-
-# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await context.bot.send_message(
-#         chat_id=update.effective_chat.id,
-#         text="Hello from Django!"
-#     )
-
-# async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await context.bot.send_message(
-#         chat_id=update.effective_chat.id,
-#         text=update.message.text
-#     )
-
-# # Register handlers once
-# application.add_handler(CommandHandler("start", start))
-# application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
+SERVICE_ACCOUNT = "phoenix@ee-street-guide.iam.gserviceaccount.com"
+KEY_FILE = "ee.json"
+PROJECT_ID = "ee-street-guide"
 
 @csrf_exempt
 async def telegram_webhook(request):
@@ -126,7 +112,7 @@ async def telegram_webhook(request):
         # print("Received Telegram update:", data)
         update = Update.de_json(data, application.bot)
         if not getattr(application, '_is_initialized', False):
-            await application.initialize()
+            await application.initialize(project=PROJECT_ID, service_account=SERVICE_ACCOUNT, key_file=KEY_FILE)
             application._is_initialized = True
         await application.process_update(update)
         return JsonResponse({"status": "ok"})
