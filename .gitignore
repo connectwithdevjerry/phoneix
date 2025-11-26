@@ -1,0 +1,9 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Environment folders
+env/
+venv/
+.venv/
