@@ -1,1 +1,1 @@
-web: daphne landalert.asgi:application --bind 0.0.0.0 --port $PORT
+web: uvicorn landalert.asgi:application --host 0.0.0.0 --port $PORT --workers 4 --worker-class uvicorn.workers.UvicornWorker
