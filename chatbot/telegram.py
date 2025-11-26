@@ -153,7 +153,7 @@ async def handle_location(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     reply = f"""
         <b>🛰️ LandAlert Report 🛰️</b>
-        <i>Real-time analysis by Team Phoneix</i>
+        <i>Real-time analysis by Team Phoenix</i>
 
         ---
         <b>Geographic Data</b>

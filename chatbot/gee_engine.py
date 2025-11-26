@@ -148,7 +148,7 @@ def lstAnalysis(lat, lon):
     result = sampled.getInfo()
     props = result['properties']
 
-    temp = props.get('LST_25')
+    temp = props.get('LST_25') - 4  # Calibration adjustment
     cls = int(props.get('Heat_Class'))
 
     labels = {
