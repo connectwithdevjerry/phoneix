@@ -18,16 +18,22 @@ SERVICE_ACCOUNT = "phoenix@ee-street-guide.iam.gserviceaccount.com"
 KEY_FILE = "ee.json"
 PROJECT_ID = "ee-street-guide"
 
+APP_INITIALIZED = False
+
 @csrf_exempt
 async def telegram_webhook(request):
+    global APP_INITIALIZED
+    
     if request.method == "POST":
         data = json.loads(request.body.decode("utf-8"))
-        # print("Received Telegram update:", data)
         update = Update.de_json(data, application.bot)
-        if not getattr(application, '_is_initialized', False):
+
+        # Initialize the application only once
+        if not APP_INITIALIZED:
             await application.initialize()
-            # await application.initialize(project=PROJECT_ID, service_account=SERVICE_ACCOUNT, key_file=KEY_FILE)
-            application._is_initialized = True
+            APP_INITIALIZED = True
+
         await application.process_update(update)
         return JsonResponse({"status": "ok"})
+    
     return JsonResponse({"error": "GET not allowed"})
