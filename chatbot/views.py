@@ -59,6 +59,14 @@ def get_all_coordinates_with_users(request):
             "first_name": user.first_name if user else None,
             "last_name": user.last_name if user else None,
             "userId": record.userId,
+            "land_use": record.user_intent,
+            "flood_risk_level": record.flood_risk_level,
+            "created_at": record.created_at,
+            "ai_recommendation": record.ai_recommendation,
+            "vhi": record.vhi,
+            "lst_temp": record.lst_temp,
+            "lst_category": record.lst_category,
+            "drought": record.drought,
         })
 
     return JsonResponse({"data": results}, safe=False)
