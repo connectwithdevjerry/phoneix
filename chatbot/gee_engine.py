@@ -12,13 +12,17 @@ nigeria = None
 fsi_class = None
 vhi_2015 = None
 lst_class = None
+_GEE_INITIALIZED = False
 
 def ensure_gee_initialized():
-    if ee.data.initialize:
+    global _GEE_INITIALIZED
+    if _GEE_INITIALIZED:
         return
     
     service_account = os.getenv("GEE_SERVICE_ACCOUNT")
     key_b64 = os.getenv("GEE_PRIVATE_KEY_B64")
+    if not service_account or not key_b64:
+        raise RuntimeError("Missing GEE_SERVICE_ACCOUNT or GEE_PRIVATE_KEY_B64 env vars")
 
     # Convert base64 → dict
     key_data = json.loads(base64.b64decode(key_b64))
@@ -29,6 +33,7 @@ def ensure_gee_initialized():
         key_data=key_data
     )
     ee.Initialize(credentials)
+    _GEE_INITIALIZED = True
 
 
 ensure_gee_initialized()
