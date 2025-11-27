@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'chatbot',
     'chatbot.apps.ChatbotConfig',
+    "corsheaders",
 
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 FIREBASE_URL = "https://landalert-2c4eb-default-rtdb.firebaseio.com/queries.json"
 ROOT_URLCONF = 'landalert.urls'
 
