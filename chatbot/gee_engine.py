@@ -21,11 +21,17 @@ def ensure_gee_initialized():
     
     service_account = os.getenv("GEE_SERVICE_ACCOUNT")
     key_b64 = os.getenv("GEE_PRIVATE_KEY_B64")
+    key_data_raw = os.getenv("GEE_PRIVATE_KEY_JSON")
     if not service_account or not key_b64:
         raise RuntimeError("Missing GEE_SERVICE_ACCOUNT or GEE_PRIVATE_KEY_B64 env vars")
 
     # Convert base64 → dict
-    key_data = json.loads(base64.b64decode(key_b64))
+    # key_data = json.loads(base64.b64decode(key_b64))
+
+    if isinstance(key_data_raw, dict):
+        key_data = json.dumps(key_data_raw)
+    else:
+        key_data = key_data_raw
 
     # Credential for service account
     credentials = ee.ServiceAccountCredentials(
