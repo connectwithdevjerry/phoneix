@@ -15,7 +15,6 @@ BOT_TOKEN ="8496710291:AAH76wzl7zPh0p23QS4Ya8NDVhxYYpTuT6o"
 # Create the Application object
 application = Application.builder().token(BOT_TOKEN).build()
 
-
 # Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcomeMessage = """<b>👋 Welcome to LandAlert Bot!</b>

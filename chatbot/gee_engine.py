@@ -14,7 +14,7 @@ vhi_2015 = None
 lst_class = None
 
 def ensure_gee_initialized():
-    if ee.data._initialized:
+    if ee.data.initialize:
         return
     
     service_account = os.getenv("GEE_SERVICE_ACCOUNT")
