@@ -24,7 +24,7 @@ slope = ee.Terrain.slope(dem)
 # 4. HYDROSHEDS (Flow Accumulation)
 # ==========================================
 # Defining standard HydroSHEDS dataset ID
-hydrodataset = ee.Image("WWF/HydroSHEDS/03VFDEM")
+hydrodataset = ee.Image("WWF/HydroSHEDS/30ACC")
 flowAccumulation = hydrodataset.select('b1').clip(nigeria)
 
 # ==========================================
@@ -175,7 +175,7 @@ fsi_named = fsi_ahp.rename('FSI_AHP').unmask(0)
 fsiPercentiles = fsi_named.reduceRegion(
     reducer=ee.Reducer.percentile([20, 40, 60, 80]),
     geometry=nigeria,
-    scale=2000, # Increased scale to prevent Timeouts in Colab
+    scale=1000, # Increased scale to prevent Timeouts in Colab
     tileScale=4,
     maxPixels=1e13
 )
@@ -216,7 +216,6 @@ def floodAnalysis(lat, lon):
     if lat is None or lon is None:
         return
 
-    
     point = ee.Geometry.Point([lon, lat])
 
     try:
